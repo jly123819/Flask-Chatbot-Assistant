@@ -5,7 +5,6 @@ import requests
 app = Flask(__name__)
 recipes_df = pd.read_csv("cleaned_recipes.csv")
 
-# Home route (GET /)
 @app.route("/", methods=["GET"])
 def home():
     return """
@@ -19,7 +18,6 @@ def home():
     <p>You can use <a href="https://www.postman.com/" target="_blank">Postman</a> or <code>curl</code> to try it out!</p>
     """
 
-# Function to search CSV
 def find_recipe(query):
     query = query.lower()
     for _, row in recipes_df.iterrows():
@@ -43,7 +41,6 @@ def find_recipe(query):
         }
     return None
 
-# Spoonacular API fallback
 SPOONACULAR_API_KEY = "f7e624ecb5e9494b95e31d9b368b1665"
 
 def fetch_from_spoonacular(query):
@@ -66,7 +63,6 @@ def fetch_from_spoonacular(query):
             }
     return None
 
-# Chat route (POST /chat)
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json()
@@ -76,12 +72,17 @@ def chat():
         result = fetch_from_spoonacular(user_message)
         if not result:
             return jsonify({"response": "Sorry, I couldn't find a recipe for that."})
-    return jsonify({
-        "response": f"Here's a recipe for **{result['title']}**:\\n\\n"
-                    f"**Ingredients:**\\n" + "\\n".join(result['ingredients']) + "\\n\\n"
-                    f"**Instructions:**\\n{result['instructions']}"
-    })
+        response_string = (
+        f"Here's a recipe for **{result['title']}**:\n\n"  
+        f"**Ingredients:**\n" + "\n".join(result['ingredients']) + "\n\n" 
+        f"**Instructions:**\n{result['instructions']}"
+    )
 
-# Run locally if needed
+    final_response_string = response_string.replace('\\n', '\n')
+    
+    print(f"Flask repr before jsonify: {repr(final_response_string)}")
+
+    return jsonify({"response": final_response_string})
+
 if __name__ == "__main__":
     app.run(debug=True)
