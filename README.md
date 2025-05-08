@@ -48,3 +48,11 @@ Once the bot is running, you can interact with it directly in Discord using:
 !recipe tofu
 
 It will respond with a recipe name, ingredients, and instructions.
+
+## 💬 Try It on Discord (Optional)
+
+Want to see the bot live in action?  
+Join our test server here: [Join RecipeBot Discord](https://discord.gg/q9KwwWZx)
+
+*Note: The bot must be running for the command `!recipe <ingredient>` to respond.*
+
