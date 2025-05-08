@@ -45,6 +45,6 @@ Once the bot is running, you can interact with it directly in Discord using:
 
 It will respond with a recipe name, ingredients, and instructions.
 
-👥 Team Members
+## 👥 Team Members
 Jessica Xiong
 Lingyue Ji
