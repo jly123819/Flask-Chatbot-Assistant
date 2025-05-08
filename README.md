@@ -2,6 +2,10 @@
 
 This project is a Discord-integrated chatbot built with **Flask** and **Python** that allows users to search for recipes using either a local CSV dataset or the **Spoonacular API**. It includes a fully functional Flask backend, an ETL preprocessing step, and a Discord bot for interaction.
 
+## 👥 Team Members
+Jessica Xiong
+Lingyue Ji
+
 ## 💡 Features
 
 - Search for recipes by ingredient or keyword
@@ -44,7 +48,3 @@ Once the bot is running, you can interact with it directly in Discord using:
 !recipe tofu
 
 It will respond with a recipe name, ingredients, and instructions.
-
-## 👥 Team Members
-Jessica Xiong
-Lingyue Ji
