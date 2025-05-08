@@ -41,7 +41,8 @@ def find_recipe(query):
         }
     return None
 
-SPOONACULAR_API_KEY = "f7e624ecb5e9494b95e31d9b368b1665"
+# Replace this with your own Spoonacular API key if testing
+SPOONACULAR_API_KEY = "YOUR_SPOONACULAR_API_KEY_HERE"
 
 def fetch_from_spoonacular(query):
     url = "https://api.spoonacular.com/recipes/complexSearch"
