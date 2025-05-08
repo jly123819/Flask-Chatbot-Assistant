@@ -73,4 +73,5 @@ async def on_command_error(ctx, error):
         print(f'Unhandled command error: {error}')
         await ctx.send("An unexpected error occurred.")
 
-bot.run('MTM2ODcyNDIzNDI1MTI3MjIxMg.G-vzxL.gmACRDMhRhUdpave12ZfhAQsYN2MI6hTVXYNjo')
+# Replace this with your actual token when running locally
+bot.run("YOUR_DISCORD_BOT_TOKEN_HERE")
